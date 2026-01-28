@@ -6,6 +6,7 @@
 <title>Royal Chai | Brew the Royal Tradition</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
@@ -15,7 +16,11 @@
   --cream:#fff3df;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body{
   font-family:'Poppins',sans-serif;
@@ -43,7 +48,6 @@ body{
   overflow:hidden;
 }
 
-/* CARD WATERMARK */
 .card::before{
   content:"";
   position:absolute;
@@ -52,7 +56,6 @@ body{
   opacity:.08;
 }
 
-/* NAVBAR */
 .nav{
   display:flex;
   justify-content:space-between;
@@ -62,7 +65,9 @@ body{
   z-index:3;
 }
 
-.nav img{height:68px;}
+.nav img{
+  height:68px;
+}
 
 .nav ul{
   list-style:none;
@@ -70,7 +75,6 @@ body{
   gap:2rem;
 }
 
-/* 🔥 NAV FONT SIZE BACK TO SMALL */
 .nav li{
   font-size:.9rem;
   font-weight:500;
@@ -79,9 +83,11 @@ body{
   transition:.3s;
 }
 
-.nav li:hover{color:var(--gold);opacity:1;}
+.nav li:hover{
+  color:var(--gold);
+  opacity:1;
+}
 
-/* HERO */
 .hero{
   display:grid;
   grid-template-columns:1fr 1.2fr 1fr;
@@ -105,7 +111,6 @@ body{
   object-fit:cover;
 }
 
-/* ===== CENTER DIV WITH ROYAL WATERMARK ===== */
 .center{
   position:relative;
   text-align:center;
@@ -118,7 +123,6 @@ body{
   overflow:hidden;
 }
 
-/* BIG ROYAL TEXT WATERMARK */
 .center::before{
   content:"ROYAL  CHAI";
   position:absolute;
@@ -134,7 +138,6 @@ body{
   pointer-events:none;
 }
 
-/* SUBTLE PATTERN */
 .center::after{
   content:"";
   position:absolute;
@@ -168,7 +171,9 @@ body{
   margin:.9rem 0;
 }
 
-.center h1 span{color:var(--gold);}
+.center h1 span{
+  color:var(--gold);
+}
 
 .center h1::after{
   content:'';
@@ -237,9 +242,13 @@ button{
 .social a{
   font-size:1.3rem;
   color:var(--brown);
+  transition:.3s;
 }
 
-.social a:hover{color:var(--gold);}
+.social a:hover{
+  color:var(--gold);
+  transform:translateY(-3px);
+}
 
 .footer{
   text-align:center;
@@ -248,10 +257,60 @@ button{
   padding:1.3rem;
 }
 
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;}
-  .hero-img{max-width:240px;margin:auto;}
-  .center h1{font-size:2.4rem;}
+@media(max-width:768px){
+
+  .nav{
+    flex-direction:column;
+    gap:1rem;
+    padding:1.2rem;
+  }
+
+  .nav img{
+    height:58px;
+  }
+
+  .nav ul{
+    gap:1.5rem;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:2rem 1.4rem;
+    gap:1.6rem;
+  }
+
+  .hero-img{
+    max-width:200px;
+    margin:auto;
+  }
+
+  .center{
+    padding:2rem 1.4rem;
+  }
+
+  .center h1{
+    font-size:2.2rem;
+  }
+
+  .center::before{
+    font-size:3.2rem;
+    letter-spacing:6px;
+  }
+}
+
+@media(max-width:420px){
+
+  .center h1{
+    font-size:2rem;
+  }
+
+  .center p{
+    font-size:.95rem;
+  }
+
+  input, button{
+    width:100%;
+  }
 }
 </style>
 </head>
@@ -262,7 +321,7 @@ button{
   <div class="card">
 
     <div class="nav">
-      <img src="RoyalChai.png">
+      <img src="RoyalChai.png" alt="Royal Chai Logo">
       <ul>
         <li>Home</li>
         <li>About</li>
@@ -273,7 +332,7 @@ button{
     <div class="hero">
 
       <div class="hero-img">
-        <img src="pour.jpg">
+        <img src="pour.jpg" alt="Pouring Chai">
       </div>
 
       <div class="center">
@@ -299,7 +358,7 @@ button{
       </div>
 
       <div class="hero-img">
-        <img src="masalatea.jpg">
+        <img src="masalatea.jpg" alt="Masala Chai">
       </div>
 
     </div>
@@ -312,7 +371,7 @@ button{
 </div>
 
 <script>
-document.getElementById("emailForm").addEventListener("submit",e=>{
+document.getElementById("emailForm").addEventListener("submit",function(e){
   e.preventDefault();
   alert("Thank you! You'll be notified when Royal Chai launches ☕👑");
 });
